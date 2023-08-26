@@ -11,7 +11,15 @@
 
     <p>
     <strong>foto:</strong>
-    <%= image_tag article.foto, style: "width: 100px" %>
+    <%#= image_tag article.foto, 
+    style: "width: 100px" 
+    if article.foto.attached? %>
+
+    <% if article.foto.attached? %>
+      <%image_tag article.foto, style: "width: 100px"%>
+    <% else %>%> 
+      no hay imagen 
+    <% end %>%>
   </p>
 
 </div>
